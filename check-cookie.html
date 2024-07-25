@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Check Third-Party Cookie</title>
+  </head>
+  <body>
+    <script>
+      document.cookie = "testCookie=1; SameSite=None; Secure";
+
+      function areThirdPartyCookiesBlocked() {
+        return document.cookie.indexOf("testCookie=1") === -1;
+      }
+
+      window.parent.postMessage(
+        {
+          thirdPartyCookiesBlocked: areThirdPartyCookiesBlocked(),
+        },
+        "*"
+      );
+    </script>
+  </body>
+</html>
