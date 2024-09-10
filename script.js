@@ -1,8 +1,7 @@
 (function () {
   document.addEventListener("DOMContentLoaded", () => {
-    console.log('DOM fully loaded and parsed');
     window.variationID = '1004241571';
-    console.log('variationID set to:', window.variationID);
+    window.experienceID = '1004100739';
 
     document.querySelectorAll('.emailInput')?.forEach((ele) => {
       ele.style.display = 'none';
